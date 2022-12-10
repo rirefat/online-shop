@@ -7,6 +7,7 @@ import './Search.css';
 const Search = () => {
     const [products, setProducts]=useProducts();
     const [searchText, setSearchText]=useState("");
+    const [empty, setEmpty]=useState('')
     const [result, setResult]=useState([]);
     
 
@@ -18,13 +19,14 @@ const Search = () => {
     }
 
     const clearField =()=>{
+        setEmpty('');
     }
 
     return (
         <div>
             <h1>Search Your Product</h1>
             <div className="search-field">
-                <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' id='search'/>
+                <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' id='search' />
                 {(searchText)?<button onClick={clearField}>X</button>:""}
             </div>
             <div className='notification'>

@@ -18,6 +18,9 @@
     cursor: pointer;
     box-shadow: 2px 2px 8px lightgray;
 }
+.search-field button:hover{
+    background-color: #c23616;
+}
 .notification{
     display: flex;
     color: green;
