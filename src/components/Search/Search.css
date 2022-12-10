@@ -4,4 +4,14 @@
     padding: 6px 0px 6px 25px;
     border-radius: 5px;
     box-shadow: 2px 2px 8px lightgray;
+    margin-bottom: 50px;
+}
+.notification{
+    color: green;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 5%;
+}
+.placeholder-img{
+    width: 20%;
 }

@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useProducts from '../Hooks/useProducts';
+import SingleProduct from '../SingleProduct/SingleProduct';
+import img from '../../undraw_Web_search_re_efla.png';
 import './Search.css';
 
 const Search = () => {
+    const [products, setProducts]=useProducts();
+    const [result, setResult]=useState([]);
+    
+
+    const handleSearch=(event)=>{
+        let searchText = event.target.value.toLowerCase();
+        let match = products.filter(value=>value.name.toLowerCase().includes(searchText));
+        setResult(match);        
+    }
     return (
         <div>
             <h1>Search Your Product</h1>
             <div className="search-field">
-                <input type="text" placeholder='Search Here' />
+                <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' />
             </div>
+            <p className='notification'>{result.length>=1 ? "Products Available For You:":" "}</p>
+
+            {
+                result.length>=1 ? <div className="product-container">                
+                {
+                    result.map(product=><SingleProduct
+                        product={product}
+                        key={product._id}
+                    ></SingleProduct>)
+                }
+            </div>:
+            <img className='placeholder-img' src={img}></img>
+            }
+
+            
+            
         </div>
     );
 };
