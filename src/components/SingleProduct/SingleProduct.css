@@ -1,0 +1,9 @@
+.single-product{
+    margin-bottom: 15px;
+}
+
+.single-product img{
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px lightgray;
+}

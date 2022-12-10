@@ -1,0 +1,10 @@
+.title{
+    margin-bottom: 90px;
+}
+
+.product-container{
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
