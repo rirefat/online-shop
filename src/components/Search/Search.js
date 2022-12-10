@@ -6,19 +6,26 @@ import './Search.css';
 
 const Search = () => {
     const [products, setProducts]=useProducts();
+    const [searchText, setSearchText]=useState("");
     const [result, setResult]=useState([]);
     
 
     const handleSearch=(event)=>{
         let searchText = event.target.value.toLowerCase();
+        setSearchText(searchText);
         let match = products.filter(value=>value.name.toLowerCase().includes(searchText));
-        setResult(match);        
+        setResult(match);       
     }
+
+    const clearField =()=>{
+    }
+
     return (
         <div>
             <h1>Search Your Product</h1>
             <div className="search-field">
-                <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' />
+                <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' id='search'/>
+                {(searchText)?<button onClick={clearField}>X</button>:""}
             </div>
             <div className='notification'>
                 <p>{result.length>=1 ? "Products Available For You:":" "}</p>
@@ -35,9 +42,7 @@ const Search = () => {
                 }
             </div>:
             <img className='placeholder-img' src={img}></img>
-            }
-
-            
+            }        
             
         </div>
     );

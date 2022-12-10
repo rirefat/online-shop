@@ -6,6 +6,18 @@
     box-shadow: 2px 2px 8px lightgray;
     margin-bottom: 50px;
 }
+.search-field button{
+    margin: 0 5px;
+    border: none;
+    background-color: #e84118;
+    color: aliceblue;
+    padding: 6px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px lightgray;
+}
 .notification{
     display: flex;
     color: green;
