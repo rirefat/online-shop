@@ -7,10 +7,14 @@
     margin-bottom: 50px;
 }
 .notification{
+    display: flex;
     color: green;
     font-weight: 600;
     text-align: left;
     margin-left: 5%;
+}
+.notification p{
+    margin-right: 5px;
 }
 .placeholder-img{
     width: 20%;

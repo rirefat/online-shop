@@ -20,7 +20,10 @@ const Search = () => {
             <div className="search-field">
                 <input onChange={handleSearch} type="text" placeholder='Search Product Name Here' />
             </div>
-            <p className='notification'>{result.length>=1 ? "Products Available For You:":" "}</p>
+            <div className='notification'>
+                <p>{result.length>=1 ? "Products Available For You:":" "}</p>
+                <p>{result.length>=1 ? result.length :" "}</p>
+            </div>
 
             {
                 result.length>=1 ? <div className="product-container">                
